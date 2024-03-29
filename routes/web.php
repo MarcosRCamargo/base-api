@@ -16,3 +16,7 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+$router->group(['middleware' => 'auth.jwt'], function () use ($router) {
+    // Your protected routes here
+});

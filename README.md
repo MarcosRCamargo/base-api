@@ -1,26 +1,30 @@
-# Lumen PHP Framework
+# API de Exemplo com Lumen
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://img.shields.io/packagist/dt/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://img.shields.io/packagist/v/laravel/lumen-framework)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://img.shields.io/packagist/l/laravel/lumen)](https://packagist.org/packages/laravel/lumen-framework)
+Esta é uma API de exemplo construída utilizando o framework Lumen, uma versão "lightweight" do Laravel. A API possui funcionalidades básicas, incluindo autenticação JWT (JSON Web Token) e um nível inicial de controle de acesso (ACL). Abaixo estão detalhadas as características e tecnologias envolvidas nesta API.
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+## Características
 
-> **Note:** In the years since releasing Lumen, PHP has made a variety of wonderful performance improvements. For this reason, along with the availability of [Laravel Octane](https://laravel.com/docs/octane), we no longer recommend that you begin new projects with Lumen. Instead, we recommend always beginning new projects with [Laravel](https://laravel.com).
+- **Autenticação JWT**: Implementação de autenticação baseada em JWT para proteger os endpoints da API.
+- **Controle de Acesso (ACL)**: Implementação básica de controle de acesso para restringir o acesso a certos endpoints com base em funções de usuário.
+- **Docker**: Utilização de contêineres Docker para simplificar o ambiente de desenvolvimento e implantação da API.
+- **MySQL**: Banco de dados relacional MySQL para armazenamento de dados.
+- **Redis**: Utilização do Redis para armazenamento em cache e gerenciamento de sessões.
+- **Nginx**: Servidor web Nginx utilizado como proxy reverso para roteamento de solicitações HTTP para a API.
+- **OAuth 2.0 e Login do Google**: Implementação de autenticação OAuth 2.0 com suporte ao login do Google para consumir a API.
+- **Testes de Unidade**: Implementação de testes de unidade para garantir a robustez e qualidade do código.
 
-## Official Documentation
+## Tecnologias Utilizadas
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+- **Lumen**: Micro-framework PHP para o desenvolvimento de APIs e microserviços.
+- **PHP 8.1**: Linguagem de programação backend utilizada para desenvolver a lógica da aplicação.
+- **Composer**: Gerenciador de dependências PHP utilizado para instalar e gerenciar as dependências do projeto.
+- **GitLab CI/CD**: Configuração de pipelines de integração e entrega contínua para automação do processo de implantação.
+- **Markdown**: Utilização do formato Markdown para escrever documentação legível e formatada.
 
-## Contributing
+## Autor
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Esta API foi desenvolvida por Marcos R. Camargo como parte de um projeto de demonstração. Se você tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato pelo seguinte e-mail: marcosrcamargo@example.com.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Este README foi criado com o intuito de fornecer uma visão geral da API e das tecnologias envolvidas. Para obter instruções detalhadas sobre como configurar e executar a API, consulte a documentação fornecida no projeto.

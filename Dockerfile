@@ -1,5 +1,5 @@
-# Use the official PHP image with version 8.1
-FROM php:8.1-fpm
+# Use the official PHP image with version 8.3
+FROM php:8.3-fpm
 
 # Set the working directory in the container
 WORKDIR /var/www/html

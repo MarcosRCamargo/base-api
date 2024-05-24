@@ -1,57 +1,58 @@
 <?php
 
-/**
- * @license Apache 2.0
- */
+namespace App\Http\Controllers;
 
-namespace Petstore30\controllers;
+use App\Models\User;
+use Illuminate\Http\Request;
 
-/**
- * Class User
- *
- * @package Petstore30\controllers
- *
- * @author  Donii Sergii <doniysa@gmail.com>
- */
-class User
+class UserController extends Controller
 {
     /**
-     * @OA\Post(
-     *     path="/user",
-     *     tags={"user"},
-     *     summary="Create user",
-     *     description="This can only be done by the logged in user.",
-     *     operationId="createUser",
+     * @OA\Get(
+     *     path="/users",
+     *     tags={"Users"},
+     *     summary="List users",
+     *     description="Get a list of users in system.",
+     *     operationId="index",
      *     @OA\Response(
-     *         response="default",
-     *         description="successful operation"
+     *         response="200",
+     *         description="Successful operation"
      *     ),
      *     @OA\RequestBody(
-     *         description="Create user object",
+     *         description="List users objects",
      *         required=true,
      *         @OA\JsonContent(ref="#/components/schemas/User")
      *     )
      * )
      */
-    public function createUser()
+    public function index()
     {
+        $users = User::all();
+        return response()->json($users);
     }
 
     /**
      * @OA\Post(
-     *     path="/user/createWithArray",
+     *     path="/user",
      *     tags={"user"},
-     *     summary="Create list of users with given input array",
-     *     operationId="createUsersWithListInput",
+     *     summary="Create user",
+     *     operationId="store",
      *     @OA\Response(
      *         response="default",
      *         description="successful operation"
      *     ),
-     *     @OA\RequestBody(ref="#/components/requestBodies/UserArray")
      * )
      */
-    public function createUsersWithListInput()
+    public function store(Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $user = User::create($request->all());
+        return response()->json($user, 201);
     }
 
     /**
@@ -112,8 +113,10 @@ class User
      *     )
      * )
      */
-    public function loginUser()
+    public function show($id)
     {
+        $user = User::findOrfail($id);
+        return response()->json($user);
     }
 
     /**
